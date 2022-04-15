@@ -1,0 +1,35 @@
+@mixin flexCenter($flexJC:center, $flexAC:center, $flexW:nowrap) {
+  display: flex;
+  flex-wrap: $flexW;
+  justify-content: $flexJC;
+  align-items: $flexAC;
+}
+
+@mixin widthAlign {
+  max-width:1200px;
+  width:100%;
+  margin:0 auto;
+}
+
+
+// responsive
+@mixin mobile {
+  @media screen and (max-width: #{$maxIphone}) {
+    @content;
+  }
+}
+@mixin smallTablet {
+  @media screen and (max-width: #{$minTablet}) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: #{$maxTablet}) {
+    @content;
+  }
+}
+@mixin noteBook {
+  @media screen and (max-width: #{$maxNote}) {
+    @content;
+  }
+}

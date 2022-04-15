@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<!-- 아이폰(사파리) UI 없애기 -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<!-- 기계상관없이 1.0으로 나오기  -->
+<script type="text/javascript">
+	//자동 주소표시줄 스크롤
+	window.addEventListener('load', function() { setTimeout(scrollTo, 0, 0, 1);	}, false);
+	//UI 없는 Fullscreen 모드인지 확인하기
+</script>
+
+<!-- reset CSS -->
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<!-- main CSS -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!--[if lt IE 9]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+<!-- <script type="text/javascript" src="jquery/jquery-1.10.2.min.js"></script> -->
+
+<title>사전예약 페이지</title>
+
+</head>
+<body>
+
+  <header>
+    <h1><a href="#visual"><img src="img/bar_logo.png" alt="MMORPG 더프레이"></a></h1>
+    
+    <nav>
+      <ul>
+        <li><a href="#visual" class="ani">홈</a></li>
+        <li><a href="#reservation">사전예약</a></li>
+        <li><a href="#gameInfo">게임소개</a></li>
+        <li><a href="#character">캐릭터</a></li>
+        <li><a href="#event">이벤트</a></li>
+      </ul>
+    </nav>
+
+    <ul class="out-btn">
+      <li><a href="" target="_blank"><img src="img/cafe.png" alt="네이버 카페"></a></li>
+      <li><a href="" target="_blank"><img src="img/hungry.png" alt="헝그리 앱"></a></li>
+    </ul>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+
+
+  <main>
+    <!-- main image // visual -->
+    <section id="visual">
+      <div class="visual-ttl">
+        <img src="img/visual-logo.png" alt="22년 검증된 최고의 기대작! 더프레이 no.1 mmorpg">
+      </div>
+
+      <div class="visual-cont">
+        <!-- modal -->
+        <div class="modal video-play" id="modal3">
+          <div class="modal-body">
+            <h2>더프레이 프로모션 영상</h2>
+            <iframe src="https://www.youtube.com/embed/wDClJZFCTtY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <button class="close-btn" data-target="#modal3">&times;</button>
+        </div><!-- .//modal -->
+
+        <button class="video-btn" data-target="#modal3"><img src="img/play.png" alt="더프레이 프로모션 영상"></button>
+        <a href="#reservation" class="btn-style">지금 사전예약</a>
+      </div>
+
+      <!-- download button -->
+      <div class="pre-btn">
+        <h2>지금 더프레이 사전예약하세요!</h2>
+        <ul>
+          <li><a href=""><img src="img/google.png" alt="google play 사전예약"></a></li>
+          <li><a href=""><img src="img/galaxy.png" alt="galaxy store 사전예약"></a></li>
+          <li><a href=""><img src="img/one.png" alt="one store 사전예약"></a></li>
+          <li><a href=""><img src="img/appstore.png" alt="app store 사전예약"></a></li>
+        </ul>
+      </div>
+    </section>
+    <!-- .//main image // visual -->
+
+
+    <!-- 사전예약 -->
+    <section id="reservation">
+
+      <figure>
+        <img src="img/res-ttl1.png" alt="이벤트 01. 더프레이 사전예약">
+        <figcaption>
+          <h2>사전예약 시 귀속 다이아 100% 지급!!</h2>
+          <p>이벤트 기간 : 2022.02.08 ~ 정식 출시 전까지</p>
+        </figcaption>
+      </figure>
+
+      <form action="">
+        <fieldset>
+          <legend>사전예약 폼</legend>
+          <div>
+            <input type="radio" name="phone" id="android">
+            <label for="android">안드로이드</label>
+            
+            <input type="radio" name="phone" id="iphone">
+            <label for="iphone">아이폰</label>
+          </div>
+
+          <div class="input-box">
+            <input type="text" name="" id="" title="휴대폰 번호 입력" placeholder="휴대폰 번호를 입력해주세요">
+            <button class="btn-style">인증번호 발송</button>
+          </div>
+          <div class="input-box">
+            <input type="text" name="" id="" title="인증번호 입력" placeholder="인증번호를 입력해주세요">
+            <button class="btn-style">인증번호 확인</button>
+          </div>
+
+          <!-- 체크박스 -->
+          <div class="input-chk">
+            <input type="checkbox" name="check" id="check1">
+            <label for="check1">[필수] 개인정보 수집・이용 및 SMS 수신에 동의</label>
+            <button data-target="#modal2">자세히 보기</button>
+          </div>
+          <div class="input-chk">
+            <input type="checkbox" name="check" id="check2">
+            <label for="check2">[선택] 마케팅 활용을 위한 제 3자 정보 제공 동의</label>
+            <button data-target="#modal1">자세히 보기</button>
+            
+          </div>
+          <!-- .//체크박스 -->
+
+          <!-- 버튼 -->
+          <button class="btn-style" type="submit">지금 사전예약</button>
+        </fieldset>
+      </form>
+
+      <!-- modal -->
+      <div class="modal" id="modal1">
+        <h2>개인정보 수집・이용 및 SMS 수신</h2>
+        <div class="modal-body">
+          당사에서는 게임 정보 안내 등 서비스 제공을 위해 이용자의 개인 정보를 수집하고 있습니다.
+          <ul>
+            <li>개인 정보 수집 및 이용 목적 : 게임 일정 정보 안내 및 참가자 쿠폰 발송, 고객 문의 및 응대.</li>
+            <li>수집하는 개인 정보의 항목 : 휴대폰 번호</li>
+            <li>보유 및 이용 기간 : 수집 일로부터 2년</li>
+            <li>수집된 개인 정보는 업무 제휴, 공동 마케팅 등을 위해 사용될 수 있습니다.</li>
+          </ul>
+        </div>
+        <button class="close-btn" data-target="#modal1">&times;</button>
+      </div>
+
+      <div class="modal" id="modal2">
+        <h2>마케팅 활용을 위한 제 3자 정보 제공 동의</h2>
+        <div class="modal-body">
+          <ul>
+            <li>개인 정보 제공받는 자 : withhug</li>
+            <li>개인 정보 제공받는 자의 개인 정보 이용 목적 : withhug 게임 서비스 정보(출시, 업데이트 등) 및 관련 이벤트 안내</li>
+            <li>제공하는 개인 정보의 항목 : 전화번호</li>
+            <li>개인 정보를 제공받는 자의 개인 정보 보유 및 이용 기간 : 제공 후 2년<br>(단, 보유 및 이용 기간이 경과하거나, 수집 및 목적 달성 시 즉시 파기)</li>
+          </ul>
+        </div>
+        <button class="close-btn" data-target="#modal2">&times;</button>
+      </div>
+      <div id="overlay"></div>
+    </section>
+    <!-- .//사전예약 -->
+
+
+    <!-- 게임소개 -->
+    <section id="gameInfo">
+      <div class="title">
+        <h2>2022 검증된 최고의 기대작!</h2>
+        <p><img src="img/info-ttl.png" alt="이벤트02. 더프레이 게임소개"></p>
+      </div>
+      <div class="slider-container">
+        <ul class="slides">
+          <li class="active"><img src="img/sc_01.png" alt=""></li>
+          <li><img src="img/sc_02.png" alt=""></li>
+          <li><img src="img/sc_03.png" alt=""></li>
+          <li><img src="img/sc_04.png" alt=""></li>
+        </ul>
+        <button id="prev"><img src="img/arrow1.png" alt=""></button>
+        <button id="next"><img src="img/arrow2.png" alt=""></button>
+      </div>
+    </section>
+    <!-- .//게임소개 -->
+
+
+    <!-- 캐릭터 소개 -->
+    <section id="character">
+      <div class="title">
+        <h2>2022 검증된 최고의 기대작!</h2>
+        <p><img src="img/cha-ttl.png" alt="이벤트03. 더프레이 캐릭터소개"></p>
+      </div>
+
+      <article class="tab-wrapper">
+        <ul class="tab-nav">
+          <li class="active"><img src="img/cha-btn1.jpg" alt="기사"><span>기사</span></li>
+          <li><img src="img/cha-btn2.jpg" alt="마법사"><span>마법사</span></li>
+          <li><img src="img/cha-btn3.jpg" alt="궁수"><span>궁수</span></li>
+          <li><img src="img/cha-btn4.jpg" alt="마녀"><span>마녀</span></li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-cont active">
+            <div class="tab-inner">
+              <h2>기사<span>고귀한 빛의 기사</span></h2>
+              <img src="img/cha-line.png" alt="">
+              <p>고귀한 기사는 수많은 전투를 거쳐 몸에 난 상처와 흉터는 명예로운 선사였다. 전장에서는 광폭의 투사이면서도 동료에게는 강력한 지원군이 된다.</p>
+              <div class="spec"><img src="img/cha-knight03.png" alt="기사 캐릭터 스펙"></div>
+            </div>
+          </div>
+
+          <div class="tab-cont">
+            <div class="tab-inner">
+              <h2>마법사<span>눈의 여왕</span></h2>
+              <img src="img/cha-line.png" alt="">
+              <p>냉엄한 눈의 여왕, 신비한 주술로 적들을 쓰러뜨린다. 마법사의 주문은 강력하고도 위험하여 가장 경건한 수련자들에게만 알려줄 수 있다.</p>
+              <div class="spec"><img src="img/cha-wizard03.png" alt="마법사 캐릭터 스펙"></div>
+            </div>
+          </div>
+          
+          <div class="tab-cont">
+            <div class="tab-inner">
+              <h2>궁수<span>민첩한 숲의 활</span></h2>
+              <img src="img/cha-line.png" alt="">
+              <p>숲의 수호신으로 숲의 비호를 받아 짐승들과 친구가 되었다. 외모가 출중할 뿐만 아니라 몸놀림도 민첩하고 가벼워 신속한 공격 속도를 지니고 있다. 최고의 궁술을 위해 여정에 나섰다.</p>
+              <div class="spec"><img src="img/cha-archer03.png" alt="궁수 캐릭터 스펙"></div>
+            </div>
+          </div>
+
+          <div class="tab-cont">
+            <div class="tab-inner">
+              <h2>마녀<span>매혹적인 기계사</span></h2>
+              <img src="img/cha-line.png" alt="">
+              <p>수백 년의 시간을 초월하여 현대에 깨어난 수수께끼 같은 마녀. 강력하기 그지없는 마력을 사용할 수 있다. 정교한 사격 기술과 민첩한 몸놀림을 지니고 있다.</p>
+              <div class="spec"><img src="img/cha-witch03.png" alt="마녀 캐릭터 스펙"></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+    <!-- .//캐릭터 소개 -->
+
+
+    <!-- 이벤트 -->
+    <section id="event">
+      <div class="title">
+        <h2>2022 검증된 최고의 기대작!</h2>
+        <p><img src="img/event-ttl.png" alt="이벤트04. 더프레이 이벤트"></p>
+      </div>
+
+      <div class="event-wrap">
+        <h2>응원/소문내기 이벤트</h2>
+        <ol>
+          <li>더프레이를 기대해주시는 많은 분들의 응원소리를 들려주세요!</li>
+          <li>더프레이 사전예약 소식을 친구, 지인분들께 소문내주세요!</li>
+        </ol>
+        <ul>
+          <li><a href="" target="_blank"><img src="img/ev_k.png" alt=""></a></li>
+          <li><a href="" target="_blank"><img src="img/ev_f.png" alt=""></a></li>
+          <li><a href="" target="_blank"><img src="img/ev_y.png" alt=""></a></li>
+        </ul>
+        <a href="" class="btn-style">이벤트 바로가기</a>
+        <img src="img/evt_i1.png" alt="">
+      </div>
+
+      <article class="img-bg">
+        <div class="event-wrap">
+          <h2>공식카페 이벤트</h2>
+          <ol>
+            <li><h3><쿠폰 지급></h3>참여하신 모든 분들께 게임 오픈 후 100% GM 쿠폰 지급!</li>
+            <li><h3><가입자 추첨 100명 선물 지급!></h3>이벤트 기간 내 가입하신 분 중, 100명을 추첨, 문화상품권 지급!</li>
+            <li><h3><가입자 중></h3>이벤트 기간 내 가입하신 분 중, 1,000명 단위로 문화상품권 지급! <span>ex)1,000번째 가입자, 2,000번째 가입자</span></li>
+          </ol>
+          <a href="" class="btn-style">공식카페 바로가기</a>
+          <img src="img/evt_i2.png" alt="">
+        </div>
+      </article>
+    </section>
+    <!-- .//이벤트 -->
+
+  </main>
+
+  <footer>
+    <div>
+      <h2>유의사항</h2>
+      <ul class="caution-txt">
+        <li>본 이벤트는 사전예약 시, 입력해 주신 휴대폰 번호로 안내드립니다.</li>
+        <li>수신 거부 시, 사전예약 관련 발송되는 모든 소식 및 상품을 받으실 수 없습니다.</li>
+        <li>휴대폰 번호가 잘못 입력될 경우, 수정이 불가하오니, 등록 전 다시 한번 확인 부탁드립니다.</li>
+        <li>휴대폰 문자 스팸 가능 또는 통신사 스팸 차단 서비스를 신청, 설정되어 있을 경우, 문자 확인이 어려우니 미리 확인 부탁드립니다.</li>
+        <li>사전예약 관련 혜택 지급 일정은 등록하신 휴대폰 번호 또는 게임 내 공지사항을 통해 안내 드릴 예정입니다.</li>
+        <li>사전예약 이벤트는 휴대폰 번호 1개당 1회만 참여 가능합니다.</li>
+        <li>타인의 휴대폰 번호를 도용하여 참여 시, 처벌 대상이 될 수 있습니다.</li>
+        <li>부정행위를 통해 사전예약/이벤트에 참여가 확인될 시, 당첨 및 상품 지급이 취소될 수 있습니다.</li>
+        <li>사전예약 이벤트 일정 및 상품 등은 내부 사정에 따라 변경, 수정될 수 있습니다.</li>
+      </ul>
+
+      <address>
+        <ul>
+          <li>사업자등록번호 : 119-86-61101 (주)스마트나우</li>
+          <li>대표이사: 송현두</li>
+          <li>주소: 서울시 금천구 가산디지털로 1-171</li>
+          <li>연락처: 1899-1348</li>
+          <li>등록번호: 서울아02322</li>
+          <li>등록일자: 2016년 4월 25일</li>
+          <li>발행인: (주)스마트나우 송현두</li>
+        </ul>
+        <p>Withhug의 사전예약은 저작권법의 보호를 받으므로, 무단 전재, 복사, 배포 등을 금합니다.</p>
+        <small>Copyright (c) Hungry App All Rights Reserved.</small>
+      </address>
+    </div>
+  </footer>
+
+
+  <!-- top scroll -->
+  <a href="" id="topScroll" class="topScroll"><span class="material-icons">expand_less</span></a>
+
+
+  <script src="js/main.js"></script>
+</body>
+</html>

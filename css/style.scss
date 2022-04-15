@@ -1,0 +1,1374 @@
+@import '_variable.scss';
+@import '_mixin.scss';
+@import '_webfont.scss';
+@import '_extend.scss';
+
+// common
+.btn-style {
+  @extend %button;
+  font-size:40px;
+  padding:0.6em 2em;
+
+  &:hover {
+    background: $white;
+    color: $brown;
+    border: 3px solid $brown;
+  }
+}
+
+::selection {
+  background: $mainColor;
+  color: $white;
+}
+
+.title {
+  @include widthAlign;
+  position: relative;
+  z-index: 2;
+  
+  h2 {
+    color: $mainColor;
+    font-size: 2.4em;
+    letter-spacing: 3px;
+  }
+  p {
+    margin-top: 1.4em;
+    margin-bottom: 6em;
+  }
+}
+
+// modal
+.modal {
+  position: fixed;
+  top:-50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  transition: $easeFive;
+  background: $white;
+  opacity: 0;
+  visibility: hidden;
+  width:60%;
+  height:auto;
+  z-index: 100;
+  border-radius: 1rem;
+  padding: 2rem 2rem;
+
+  h2 {
+    text-align: center;
+    font-size:1.4em;
+    margin-bottom: 1rem;
+  }
+  .close-btn {
+    position: absolute;
+    font-size: 1.4em;
+    border-radius: 5px;
+    right:2rem;
+    top:2rem;
+    background: $mainColor;
+    color: $white;
+    width:24px;
+    height:24px;
+    text-align: center;
+
+    &:hover {
+      background: $black;
+    }
+  }
+  .modal-body {
+    padding:2rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    border:1px solid #ddd;
+    background: #efefef;
+
+    ul {
+      list-style-type: square;
+      padding-left:20px;
+
+      li:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  &.active {
+    top:50%;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+#overlay {
+  background: rgba(0,0,0,0.8);
+  width:100%;
+  height:100%;
+  position: fixed;
+  top:0;
+  left:0;
+  display: none;
+  z-index: 99;
+
+  &.active {
+    display: block;
+  }
+}
+
+
+header {
+  background:rgba(0,0,0,0.9);
+  width:100%;
+  position: fixed;
+  transition: $easeFive;
+  @include flexCenter(space-between);
+  padding:20px;
+  z-index: 90;
+
+  &.scroll {
+    padding:5px;
+
+    h1 {
+      img {
+        width:80%;
+      }
+    }
+  }
+  h1 {
+    margin-left: $headerMargin;
+    img {
+      transition: $easeFive;
+      width:100%;
+    }
+  }
+
+  nav {
+    ul {
+      @include flexCenter;
+
+      li {
+        font-size:20px;
+        color: $white;
+
+        a {
+          padding:6px 30px;
+
+          &:hover {
+            background: $white;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+  .out-btn {
+    @include flexCenter;
+    justify-content: right;
+    margin-right:$headerMargin;
+
+    li:first-child {
+      margin-right:10px;
+    }
+  }
+  .hamburger {display: none;}
+}
+
+
+
+// main visual
+#visual {
+  background: url('../img/bg_01.jpg') center -40% no-repeat $black;
+  background-size: 140%;
+  position: relative;
+  @include flexCenter($flexW:wrap);
+  justify-content: center;
+
+  .visual-ttl {
+    text-align: center;
+    width:100%;
+    margin-top:9em;
+  }
+
+  .visual-cont {
+    text-align: center;
+
+    // video modal
+    .video-play {
+
+      .modal-body {
+        border:0;
+        background: $white;
+        padding:0;
+      }
+      iframe {
+        width: 100%;
+        height:50vh;
+      }
+    }
+
+    .video-btn {
+      transform: scale(1);
+      
+      &:hover {
+        transition: $easeFive;
+        transform: scale(1.2);
+      }
+    }
+    .btn-style {
+      display: block;
+      margin-top:40px;
+    }
+  }
+
+  .pre-btn {
+    width:100%;
+    margin:24% 0 10%;
+
+    h2 {
+      color: $white;
+      font-size:3em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    ul {
+      @include widthAlign;
+      @include flexCenter(space-between, flex-start);
+
+      li {
+        width:24%;
+      }
+    }
+  }
+}
+
+
+
+
+// 사전예약
+#reservation {
+  background: url('../img/bg_02.jpg') center top no-repeat $black;
+  background-size: 157%;
+  padding:10% 0 15%;
+
+  figure {
+    @include widthAlign;
+    position: relative;
+
+    &:before {
+      content:'';
+      background: url('../img/res-ttl2.png') 110% top no-repeat;
+      position: absolute;
+      top:-80%;
+      right:0;
+      width:100%;
+      height:500px;
+    }
+
+    img {
+      position: relative;
+      z-index: 1;
+    }
+    figcaption {
+      position: relative;
+      z-index: 1;
+      
+      h2 {
+        font-size: 2em;
+        color: $mainColor;
+        margin:16px 0 6px
+      }
+      p {
+        margin-left:-50px;
+        color: $mainColor;
+        background: linear-gradient(to right, transparent 10%, $black 92%, transparent);
+        font-size: 1.8em;
+        width: 700px;
+        text-align: center;
+        padding-top: 5px;
+      }
+    }
+  }
+
+  form {
+    margin-top:6em;
+    fieldset {
+      background: linear-gradient(rgba(76, 65, 52, 0.8), rgba(46, 38, 30, 0.8));
+      @include widthAlign;
+      padding:8em 5em;
+      color: $mainColor;
+      text-align: center;
+
+      legend {
+        position: absolute;
+        left:-500%;
+      }
+      div {
+        position: relative;
+        margin-bottom: 20px;
+        font-size:1.6em;
+        text-align: left;
+
+        // input radio
+        input[type="radio"] {
+          display: none;
+          
+          & + label {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            padding-left:30px;
+  
+            &:before {
+              @extend %label;
+              border:1px solid $mainColor;
+              width:22px;
+              height:22px;
+              top:6px;
+              left:0;
+            }
+          }
+          &:checked + label:after {
+            @extend %label;
+            background:$mainColor;
+            width:18px;
+            height:18px;
+            top:9px;
+            left:3px;
+          }
+        }
+
+        &.input-box {
+          display: grid;
+          grid-template-columns: 3fr 1fr;
+          grid-template-rows: 1fr;
+          column-gap: 20px;
+
+          // text input
+          input[type="text"] {
+            padding:10px 10px;
+            background: $inputBg;
+            color: $white;
+
+            &::placeholder {
+              color: $mainColor;
+            }
+          }
+          button {
+            font-size:16px;
+          }
+        }
+
+        // check box
+        &.input-chk {
+          position: relative;
+          @include flexCenter($flexJC:space-between);
+
+          input[type="checkbox"] {
+            display: none;
+
+            & + label {
+              display: inline-block;
+              cursor: pointer;
+              position: relative;
+              padding-left:34px;
+
+              &:before {
+                content:'';
+                @extend %labelCheck;
+                background: $inputBg;
+              }
+            }
+            &:checked + label:before {
+              content:'\2713';
+              @extend %labelCheck;
+              @include flexCenter();
+            }
+          }
+          button {
+
+            &:hover {
+              text-decoration: underline;
+              color: $white
+            }
+          }
+        }
+      }
+      
+    }
+  }
+}
+
+
+// 게임소개
+#gameInfo {
+  background: url('../img/bg_03.jpg') center top no-repeat $black;
+  background-size:157%;
+  padding:10% 0 0;
+  position: relative;
+
+  .slider-container {
+    position: relative;
+    @include widthAlign();
+    min-height:104vh;
+  
+    .slides {
+
+      li {
+        position: absolute;
+        width:100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: $easeFive;
+
+        img {width:100%;}
+        &.active {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  button {
+    position: absolute;
+    top:34%;
+    z-index: 2;
+
+    &#prev {
+      left:-70px;
+    }
+    &#next {
+      right:-70px;
+    }
+  }
+}
+
+
+
+
+// 캐릭터 소개
+#character {
+  background: url('../img/bg_04.jpg') center top no-repeat $black;
+  background-size:157%;
+  padding:10% 0;
+  position: relative;
+
+  .tab-wrapper {
+    position: relative;
+
+    .tab-nav {
+      @include flexCenter($flexJC:space-between);
+      @include widthAlign;
+      padding:0 20px;
+      position: absolute;
+      bottom: -6%;
+      left:50%;
+      transform: translateX(-50%);
+      z-index: 2;
+
+      li {
+        text-align: center;
+        padding:8px;
+        color: $white;
+        font-weight: bold;
+        font-size:14px;
+        cursor: pointer;
+        transition: $easeFive;
+        filter: grayscale(100%);
+        
+        &:hover, &.active {
+          filter: grayscale(0);
+          color: $brown;
+        }
+        img {
+          border-radius: 10px;
+        }
+        span {
+          display: block;
+          font-size:18px;
+          padding-top: 10px;
+        }
+      }
+    }
+
+    .tab-content {
+      line-height: 1.8rem;
+      height:100vh;
+      
+
+      .tab-cont {
+        display:none;
+        height:100%;
+        overflow: hidden;
+
+        &.active {
+          display: block;
+        }
+        
+
+        &::before, &::after {
+          content:'';
+          position: absolute;
+          width:100%;
+          height:180%;
+        }
+
+        // knight
+        &:first-child:before {
+          background: url('../img/cha-knight02.png') -30em top no-repeat;
+          filter: grayscale(100%);
+          top: -28em;
+        }
+        &:first-child:after {
+          background: url('../img/cha-knight01.png') 27em top no-repeat;
+          top: -28em;
+        }
+        // wizard
+        &:nth-child(2):before {
+          background: url('../img/cha-wizard02.png') -20em top no-repeat;
+          filter: grayscale(100%);
+          top: -28em;
+        }
+        &:nth-child(2):after {
+          background: url('../img/cha-wizard01.png') 36em top no-repeat;
+          top: -10em;
+        }
+        // archer
+        &:nth-child(3):before {
+          background: url('../img/cha-archer02.png') -32em top no-repeat;
+          filter: grayscale(100%);
+          top: -28em;
+        }
+        &:nth-child(3):after {
+          background: url('../img/cha-archer01.png') -3em top no-repeat;
+          top: -10em;
+        }
+        // witch
+        &:nth-child(4):before {
+          background: url('../img/cha-witch02.png') -30em top no-repeat;
+          filter: grayscale(100%);
+          top: -28em;
+        }
+        &:nth-child(4):after {
+          background: url('../img/cha-witch01.png') 4em top no-repeat;
+          top: -17em;
+        }
+
+        .tab-inner {
+          color: $white;
+          @include widthAlign;
+          position: relative;
+          z-index: 2;
+
+          h2 {
+            color: $brown;
+            font-size: 4em;
+
+            span {
+              color: $white;
+              font-size: 2.4rem;
+              display: inline-block;
+              padding-left:20px;
+            }
+          }
+          p {
+            width:36%;
+            font-size: 1.6rem;
+            margin-top: 10px;
+          }
+          .spec {
+            margin-top:4em;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+//이벤트
+#event {
+  background: url('../img/bg_05.jpg') center top no-repeat #1c1411;
+  background-size:160%;
+  padding:10% 0;
+  position: relative;
+
+  .event-wrap {
+    background: linear-gradient(90deg, rgba(85,73,59,1) 0%, rgba(71,61,49,1) 100%);
+    position: relative;
+    max-width:960px;
+    margin:0 auto;
+    padding:4rem;
+    box-shadow: 18px 23px 27px rgba(0,0,0,0.6);
+
+    &:last-child {
+      margin-top: 6em;
+    }
+
+    &:before, &:after {
+      content:'';
+      width:96%;
+      height:96%;
+      position: absolute;
+      
+    }
+    &:before {
+      border: 1px solid #6b604e;
+      top:21px;
+      left:21px;
+      z-index: 0;
+    }
+    &:after {
+      border: 1px solid #372a22;
+      top:20px;
+      left:20px;
+      z-index: 1;
+    }
+
+    h2 {
+      @extend %event;
+      color: #eeb367;
+      text-align: center;
+      font-size:3.2em;
+    }
+    ol {
+      padding-left:3em;
+      color: $mainColor;
+
+      li {
+        @extend %event;
+        font-size:2.2em;
+        list-style: decimal;
+        padding-left:20px;
+
+        &::marker {
+          color: $inputBg;
+          font-weight: bold;
+        }
+        &:before {
+          content:'';
+          background: url('../img/number.jpg') top left no-repeat;
+          background-size:100%;
+          width:60px;
+          height:60px;
+          position: absolute;
+          top:-4px;
+          left:-60px;
+          z-index: -1
+        }
+        h3 {
+          color: $brown;
+        }
+        span {
+          color: #9b8b7b;
+          font-size:0.8em;
+        }
+      }
+    }
+    ul {
+      @extend %event;
+      @include flexCenter($flexJC:space-between);
+      width: 100%;
+
+      li {
+        width:32%;
+        a:hover {opacity: 0.7;}
+      }
+    }
+
+    a {
+      @extend %event;   
+    }
+  }
+  .img-bg {
+    // overflow: hidden;
+    position: relative;
+    z-index: 2;
+    background: url('../img/bg_08.png') right top no-repeat;
+    width:100%;
+    height:100%;
+
+    &:before {
+      content: '';
+      background: url('../img/bg_06.png') left top no-repeat;
+      position: absolute;
+      top: -20em;
+      left: 0;
+      width:100%;
+      height:140%;
+    }
+    &:after {
+      content: '';
+      background: url('../img/bg_07.png') left top no-repeat;
+      position: absolute;
+      bottom: -6em;
+      right: 14em;
+      width:362px;
+      height:400px;
+      z-index: 2;
+    }
+  }
+}
+
+
+
+
+// footer
+footer {
+  background: $black;
+  color: $white;
+  padding:6em 0;
+  
+
+  div {
+    @include widthAlign;
+  }
+  h2 {
+    font-size:3em;
+    margin-bottom: 2rem;
+  }
+  .caution-txt {
+    list-style-type: '- ';
+    padding-left:20px;
+
+    li {
+      font-size:1.6em;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  address {
+    margin-top:50px;
+    padding-left:20px;
+    line-height: 2em;
+
+    ul {
+      @include flexCenter(flex-start, flex-start, wrap);
+      
+      
+      li {
+        font-size: $footerFont;
+        margin-right:10px;
+      }
+    }
+
+    p {
+      margin:10px 0;
+      font-size: $footerFont;
+    }
+    small {font-size: $footerFont;}
+  }
+}
+
+// scroll top
+#topScroll {
+  position: fixed;
+  bottom:10px;
+  right:10px;
+  background: $brown;
+  color: $white;
+  border-radius: 100%;
+  font-size:1.2em;
+  text-transform: uppercase;
+  width:50px;
+  height:50px;
+  @include flexCenter;
+  z-index: 999;
+
+  span {
+    position: relative;
+    top:0;
+    transition: $easeFive;
+  }
+  &:hover span {
+    top:-6px;
+  }
+}
+
+
+
+
+
+
+// responsive
+@include noteBook {
+  #visual {
+    background-size: 160%;
+    .visual-ttl {
+      margin-top:11em;
+      img {
+        max-width:40%;
+      }
+    }
+  }
+
+  #gameInfo {
+    background-size: cover;
+    .slider-container {
+      .slides {
+        text-align: center;
+        li {
+          left: 50%;
+          transform: translateX(-50%);
+          width:80%;
+        }
+      }
+    }
+    button {
+      &#next {right:0;}
+      &#prev {left:0;}
+    }
+  }
+
+  #character {
+    background-size: cover;
+    .tab-wrapper {
+      .tab-content {
+        .tab-cont {
+          &:first-child:after {
+            background-position: 10em top;;
+          }
+          &:nth-child(2):after {
+            background-position: 16em top;
+          }
+          &:nth-child(3):after {
+            background-position: -23em top;
+          }
+          &:nth-child(4):after {
+            background-position: -11em top;
+          }
+        }
+      }
+    }
+  }
+
+
+  #event {
+    .event-wrap {
+      &:before, &:after {
+        width: 95%;
+      }
+    }
+    .img-bg {
+      &::before {
+        background-position: -20em top;
+      }
+      &::after {
+        right: 0;
+      }
+    }
+  }
+}
+
+
+@include tablet {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &.scroll {
+      padding:6px 20px;
+
+      h1 {
+        img {width:90px;}
+      }
+      .hamburger {
+        top:10px;
+      }
+    }
+
+    h1 {
+      margin-left:0;
+      img {width:100px;}
+    }
+    nav {
+      margin-top:10px;
+      display: none;
+      transition: $easeFive;
+      width:100%;
+
+      &.open {
+        display: block;
+
+        ul {
+          flex-wrap: wrap;
+          background: rgba(0, 0, 0, 0.9);
+
+          li {
+            width:100%;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    .out-btn {
+      flex-wrap:wrap;
+      margin-right:0;
+      position: fixed;
+      bottom:70px;
+      right:10px;
+      width: 50px;
+
+      li {
+        &:first-child {
+          margin-right:0;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .hamburger {
+      transition: $easeFive;
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      right:20px;
+      top:28px;
+      width:40px;
+      height:40px;
+      text-align: right;
+
+      span {
+        display: block;
+        width:40px;
+        height:2px;
+        background: $white;
+        position: absolute;
+        right:0;
+        transition: $easeFive;
+
+        &:nth-child(1) {
+          top:0;
+        }
+        &:nth-child(2) {
+          top:16px;
+        }
+        &:nth-child(3) {
+          top:32px;
+        }
+      }
+      &.open {
+        
+        span {
+          &:nth-child(1) {
+            opacity: 0;
+          }
+          &:nth-child(2) {
+            transform: rotate(-40deg);
+          }
+          &:nth-child(3) {
+            transform: rotate(40deg);
+            top: 16px;
+          }
+        }
+      }
+    }
+  }
+
+
+  // modal
+  .modal {
+    width:90%;
+  }
+
+  section {
+    .title {
+      img {max-width:70%;}
+    }
+  }
+
+  #visual {
+    background-size: cover;
+    .visual-ttl {
+      img {
+        max-width: 60%;
+      }
+    }
+  }
+
+
+  #reservation {
+    background-size: cover;
+    padding:20% 2rem 10%;
+    figure {
+
+      &:before {
+        background-size:40%;
+        top: -66%;
+      }
+    }
+  }
+
+
+
+  #gameInfo {
+    padding: 10% 2rem 0;
+    .slider-container {
+      .slides {
+        li {
+          width:100%;
+        }
+      }
+    }
+    button {
+      &#next {right:0;}
+      &#prev {left:0;}
+    }
+  }
+
+  #character {
+    .title {
+      padding: 0 2rem;
+    }
+    .tab-wrapper {
+      .tab-nav {
+        bottom: -10%;
+      }
+      .tab-content {
+        .tab-cont {
+
+          .tab-inner {
+            padding:0 2rem;
+
+            p {
+              width: 50%;
+              text-shadow: 0px 0px 5px rgba(0,0,0,1);
+            }
+          }
+          &:before {display: none;}
+          &.active::after {background-size: 150%;}
+          &:first-child:after {
+            background-position: 0em top;
+            top: -26em;
+          }
+          &:nth-child(2):after {
+            background-position: 16em top;
+            background-size: contain;
+          }
+          &:nth-child(3):after {
+            background-position: -15em top;
+          }
+          &:nth-child(4):after {
+            background-position: -11em top;
+          }
+        }
+      }
+    }
+  }
+
+
+  #event {
+    background-size: cover;
+    .title {
+      padding: 0 2rem;
+    }
+    .event-wrap {
+      max-width:80%;
+      h2 {font-size: 2.2em;}
+      ol {
+        li {font-size: 1.6em;}
+      }
+      a.btn-style {font-size: 2em}
+    }
+    .img-bg {
+      &::after {
+        right: 0;
+        background-size: 100%;
+        width: 20%;
+        height: 20%;
+        bottom: -5em;
+      }
+    }
+  }
+
+
+  footer {
+    padding:5em 20px;
+
+    .caution-txt {
+      padding-left:40px;
+    }
+  }
+}
+
+@include smallTablet {
+
+  #visual {
+    background-size: 260%;
+    .pre-btn {
+      padding: 0 2rem;
+      ul {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        li {
+          width:49%;
+          margin-bottom: 15px;
+          img {width: 100%;}
+        }
+      }
+    }
+  }
+
+  #reservation {
+    form {
+      fieldset {
+        padding: 4em 2em;
+      }
+    }
+  }
+
+  #gameInfo {
+    background-position: 58% top;
+    padding: 20% 2rem 0;
+
+    .slider-container {
+      min-height: 80vh;
+    }
+  }
+
+  #character {
+    .title {
+      padding: 0 2rem;
+    }
+    .tab-wrapper {
+      .tab-nav {
+        bottom: -10%;
+      }
+      .tab-content {
+        .tab-cont {
+
+          .tab-inner {
+            padding:0 2rem;
+
+            p {
+              width: 50%;
+            }
+          }
+          
+          &:first-child:after {
+            background-position: 5em -11em;
+            top: 0;
+          }
+          &:nth-child(2):after {
+            background-position: 12em top;
+            top: 0;
+          }
+          &:nth-child(3):after {
+            background-position: -12em top;
+            top: 0;
+          }
+          &:nth-child(4):after {
+            top: -8em;
+          }
+        }
+      }
+    }
+  }
+
+  #event {
+    .event-wrap {
+      &:before, &:after {
+        width: 93%;
+      }
+    }
+    .img-bg {
+      &::before {
+        background-size: 80%;
+        background-position: -10em top;
+        top: -14em;
+      }
+      &::after {
+        background-size: 130%;
+      }
+    }
+  }
+  footer {
+    h2 {font-size: 2.4em;}
+    .caution-txt {
+      li {font-size: 1.2em;}
+    }
+    address {
+      ul {
+        li {font-size: 14px;}
+      }
+      p, small {font-size: 14px;}
+    }
+  }
+}
+
+
+@include mobile {
+  .btn-style {
+    font-size: 1.2em;
+  }
+  .title {
+    h2 {
+      font-size: 1.4em;
+      letter-spacing: 1px;
+    }
+    p {margin-bottom: 3em;}
+  }
+  section {
+    .title {img {max-width: 100%;}}
+  }
+  
+  #visual {
+    background-position: center top;
+
+    .visual-ttl {
+      margin: 9em auto 2em;
+    }
+    .visual-cont {
+      .video-btn {
+        width:30%;
+      }
+    }
+    .pre-btn {
+      h2 {font-size:2em;}
+    }
+  }
+
+  #reservation {
+    figure {
+      &::before {
+        background-size: 100%;
+        height: 100%;
+        background-position: center bottom;
+        top: 13em;
+      }
+      figcaption {
+        h2 {
+          font-size:1.4em;
+        }
+        p {
+          width: 100%;
+          margin-left: 0;
+          font-size:1.4em;
+        }
+      }
+    }
+    form {
+      margin-top: 15em;
+      fieldset {
+        div {
+          font-size: 18px;
+
+          input[type="radio"] {
+            & + label::before {top:0;}
+            &:checked + label {
+              
+              &::after {top: 3px;}
+            }
+          }
+
+          &.input-box {
+            @include flexCenter($flexW:wrap);
+
+            input[type="text"], button {
+              width: 100%;
+            }
+          }
+          &.input-chk {
+            flex-wrap: wrap;
+            button {
+              margin-top: 10px;
+              text-decoration: underline;
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #gameInfo {
+    background-position: 58% 4em;
+    .slider-container {
+      min-height: 50vh;
+    }
+    button {
+      top: 20%;
+      &#next {
+        text-align: right;
+      }
+      img {max-width:50%;}
+    }
+  }
+
+  #character {
+    padding: 20% 0 10%;
+    .tab-wrapper {
+      
+      .tab-content {
+        .tab-cont {
+          &:first-child::after {
+            background-position: -4em 24em;
+          }
+          &:nth-child(2)::after {
+            background-position: 1em 31em;
+          }
+          &:nth-child(3)::after {
+            background-position: -10em 31em;
+          }
+          &:nth-child(4)::after {
+            background-position: -9em 36em;
+          }
+
+          .tab-inner {
+            h2 {
+              font-size: 2em;
+              span {
+                font-size: 16px;
+                padding-left: 10px;
+              }
+            }
+            p {
+              width:100%;
+              font-size: 1em;
+            }
+            .spec {
+              margin-top: 2em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #event {
+    background-size: 300%;
+    padding: 30% 0;
+    .event-wrap {
+      max-width: 90%;
+      padding: 2rem;
+      &:before, &:after {
+        width:88%;
+        height: 93%;
+      }
+      h2 {font-size: 1.6em;}
+      ol {
+        padding-left: 2em;
+        li {
+          font-size: 1em;
+          &:before {
+            width: 34px;
+            height: 34px;
+            top: -5px;
+            left: -30px;
+          }
+        }
+      }
+      a.btn-style {font-size:1em;}
+    }
+    .img-bg {
+      &::before {
+        background-size: 90%;
+        background-position: -6em top;
+        top: -9em;
+      }
+    }
+  }
+
+}
+

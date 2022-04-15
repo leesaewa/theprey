@@ -1,0 +1,26 @@
+%label {
+  content:'';
+  position: absolute;
+  border-radius: 100%;
+}
+%labelCheck {
+  width:24px;
+  height:24px;
+  position: absolute;
+  left:0;
+  top:10%;
+  border:2px solid $mainColor;
+  color: $mainColor;
+}
+%button {
+  background: linear-gradient(180deg, rgba(218,168,104,1) 0%, rgba(210,147,84,1) 100%);
+  color: $white;
+  line-height: normal;
+  border:3px solid transparent;
+  text-align: center;
+}
+%event {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2rem;
+}
