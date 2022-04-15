@@ -2,21 +2,14 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Cache-Control" content="no-cache" />
-<meta http-equiv="Pragma" content="no-cache" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <!-- 아이폰(사파리) UI 없애기 -->
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<!-- 기계상관없이 1.0으로 나오기  -->
-<script type="text/javascript">
-	//자동 주소표시줄 스크롤
-	window.addEventListener('load', function() { setTimeout(scrollTo, 0, 0, 1);	}, false);
-	//UI 없는 Fullscreen 모드인지 확인하기
-</script>
+
 
 <!-- reset CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
@@ -71,7 +64,7 @@
         <div class="modal video-play" id="modal3">
           <div class="modal-body">
             <h2>더프레이 프로모션 영상</h2>
-            <iframe src="https://www.youtube.com/embed/wDClJZFCTtY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/wDClJZFCTtY" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <button class="close-btn" data-target="#modal3">&times;</button>
         </div><!-- .//modal -->
@@ -105,7 +98,7 @@
         </figcaption>
       </figure>
 
-      <form action="">
+      <form>
         <fieldset>
           <legend>사전예약 폼</legend>
           <div>
@@ -117,11 +110,11 @@
           </div>
 
           <div class="input-box">
-            <input type="text" name="" id="" title="휴대폰 번호 입력" placeholder="휴대폰 번호를 입력해주세요">
+            <input type="text" name="phone_number" title="휴대폰 번호 입력" placeholder="휴대폰 번호를 입력해주세요">
             <button class="btn-style">인증번호 발송</button>
           </div>
           <div class="input-box">
-            <input type="text" name="" id="" title="인증번호 입력" placeholder="인증번호를 입력해주세요">
+            <input type="text" name="phone_number" title="인증번호 입력" placeholder="인증번호를 입력해주세요">
             <button class="btn-style">인증번호 확인</button>
           </div>
 
@@ -184,13 +177,13 @@
       </div>
       <div class="slider-container">
         <ul class="slides">
-          <li class="active"><img src="img/sc_01.png" alt=""></li>
-          <li><img src="img/sc_02.png" alt=""></li>
-          <li><img src="img/sc_03.png" alt=""></li>
-          <li><img src="img/sc_04.png" alt=""></li>
+          <li class="active"><img src="img/sc_01.png" alt="더프레이 메인 슬라이드"></li>
+          <li><img src="img/sc_02.png" alt="통합서버 유저들의 치열한 전투!"></li>
+          <li><img src="img/sc_03.png" alt="각 월드(지역)의 서버별 치열한 전투!"></li>
+          <li><img src="img/sc_04.png" alt="이팩트 강한 화려한 코스튬!"></li>
         </ul>
-        <button id="prev"><img src="img/arrow1.png" alt=""></button>
-        <button id="next"><img src="img/arrow2.png" alt=""></button>
+        <button id="prev"><img src="img/arrow1.png" alt="슬라이드 화살표-이전"></button>
+        <button id="next"><img src="img/arrow2.png" alt="슬라이드 화살표-다음"></button>
       </div>
     </section>
     <!-- .//게임소개 -->
@@ -268,24 +261,24 @@
           <li>더프레이 사전예약 소식을 친구, 지인분들께 소문내주세요!</li>
         </ol>
         <ul>
-          <li><a href="" target="_blank"><img src="img/ev_k.png" alt=""></a></li>
-          <li><a href="" target="_blank"><img src="img/ev_f.png" alt=""></a></li>
-          <li><a href="" target="_blank"><img src="img/ev_y.png" alt=""></a></li>
+          <li><a href="" target="_blank"><img src="img/ev_k.png" alt="카카오스토리"></a></li>
+          <li><a href="" target="_blank"><img src="img/ev_f.png" alt="페이스북"></a></li>
+          <li><a href="" target="_blank"><img src="img/ev_y.png" alt="유튜브"></a></li>
         </ul>
         <a href="" class="btn-style">이벤트 바로가기</a>
-        <img src="img/evt_i1.png" alt="">
+        <img src="img/evt_i1.png" alt="문화상품권 5,000원 20명/문화상품권 10,000원 10명">
       </div>
 
       <article class="img-bg">
         <div class="event-wrap">
           <h2>공식카페 이벤트</h2>
           <ol>
-            <li><h3><쿠폰 지급></h3>참여하신 모든 분들께 게임 오픈 후 100% GM 쿠폰 지급!</li>
-            <li><h3><가입자 추첨 100명 선물 지급!></h3>이벤트 기간 내 가입하신 분 중, 100명을 추첨, 문화상품권 지급!</li>
-            <li><h3><가입자 중></h3>이벤트 기간 내 가입하신 분 중, 1,000명 단위로 문화상품권 지급! <span>ex)1,000번째 가입자, 2,000번째 가입자</span></li>
+            <li><h3>&lt;쿠폰 지급&gt;</h3>참여하신 모든 분들께 게임 오픈 후 100% GM 쿠폰 지급!</li>
+            <li><h3>&lt;가입자 추첨 100명 선물 지급!&gt;</h3>이벤트 기간 내 가입하신 분 중, 100명을 추첨, 문화상품권 지급!</li>
+            <li><h3>&lt;가입자 중&gt;</h3>이벤트 기간 내 가입하신 분 중, 1,000명 단위로 문화상품권 지급! <span>ex)1,000번째 가입자, 2,000번째 가입자</span></li>
           </ol>
           <a href="" class="btn-style">공식카페 바로가기</a>
-          <img src="img/evt_i2.png" alt="">
+          <img src="img/evt_i2.png" alt="GM쿠폰 100% 지급!/문화상품권 5,000원 100명">
         </div>
       </article>
     </section>
