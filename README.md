@@ -2,6 +2,11 @@
 헝그리앱에 올라온 사전예약 페이지를 다시 코딩해봄.
 
 -----
+## 리뉴얼 전 페이지
+- Javascript 붙이기 전
+<a href="http://swlee.pe.kr/smart/theprey/index.html">리뉴얼 전 페이지 보기</a>
+
+-----
 
 ## 목적
 1. 웹접근성, 웹표준 통과
