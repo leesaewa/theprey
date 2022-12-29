@@ -1,10 +1,15 @@
 # the prey 사전예약 페이지 리뉴얼
-헝그리앱에 올라온 사전예약 페이지를 다시 코딩해봄.
+- 헝그리앱에 올라온 사전예약 페이지를 다시 코딩함.
 
 -----
-## 리뉴얼 전 페이지
+## Link
 - Javascript 붙이기 전
-<a href="http://swlee.pe.kr/smart/theprey/index.html">리뉴얼 전 페이지 보기</a>
+  <a href="http://swlee.pe.kr/smart/theprey/index.html">리뉴얼 전 페이지</a>
+- <a href="https://leesaewa.github.io/theprey/">리뉴얼 후 페이지</a>
+
+
+## Preview
+<img src="https://user-images.githubusercontent.com/97646713/209971387-69bb009a-be11-4d99-aa3d-55e554fc3fda.png">
 
 -----
 
